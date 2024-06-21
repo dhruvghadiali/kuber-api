@@ -5,6 +5,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 var cors = require('cors');
 
+const errorHandler = require("./middleware/error");
+const commonRouter = require("./router/commonRouter");
+
 const app = express();
 
 dotenv.config({ path: "./config.env" });
@@ -18,12 +21,12 @@ app.use(cors());
     await mongoose.connect(process.env.DB_URI);
     app.listen(3000);
 
+    app.use("/", commonRouter);
     app.use((req, res) => {
-        res.status(200).json({
-            data: [],
-            message: 'Server is stared',
-          });
+      res.status(404);
+      res.sendFile(path.join(__dirname, "errorPage", "invalidEndpoint.html"));
     });
+    app.use(errorHandler);
   } catch (err) {
     console.log("error: " + err);
   }
