@@ -6,8 +6,8 @@ const express = require("express");
 
 var cors = require("cors");
 
-const errorHandler = require("./middleware/error");
-const commonRouter = require("./router/commonRouter");
+const errorHandler = require("@Middleware/error");
+const commonRouter = require("@Routes/commonRouter");
 
 const app = express();
 

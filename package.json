@@ -7,10 +7,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node --env-file ./config/.env src/app.js",
-    "start:dev": "nodemon --env-file ./config/.env.development.local src/server.js",
-    "start:loc": "nodemon --env-file ./config/.env.local src/app.js",
-    "start:test": "nodemon --env-file ./config/.env.test.local src/app.js",
-    "start:prod": "nodemon --env-file ./config/.env.production.local src/app.js",
+    "start:sit": "nodemon --watch src --ext js --env-file ./config/.env.sit src/server.js",
     "test": "jest --coverage"
   },
   "dependencies": {
@@ -32,5 +29,14 @@
     "proxyquire": "^2.1.3",
     "sinon": "^15.0.4",
     "supertest": "^6.3.3"
+  },
+  "_moduleAliases": {
+    "@Utils": "./src/utils",
+    "@Models": "./src/models",
+    "@Routes": "./src/routes",
+    "@Helpers": "./src/helpers",
+    "@Controllers": "./src/controllers",
+    "@Middleware": "./src/middleware",
+    "@": "./src"
   }
 }
