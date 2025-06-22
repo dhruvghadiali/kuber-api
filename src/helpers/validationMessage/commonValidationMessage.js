@@ -1,15 +1,12 @@
 const {
   emailMaxChar,
   emailMinChar,
-  addressMaxChar,
-  addressMinChar,
   lastNameMaxChar,
   lastNameMinChar,
   phoneNumberChar,
   firstNameMaxChar,
   firstNameMinChar,
-  aadhaarNumberChar,
-} = require("@MEHelpers/validationConst");
+} = require("@Helpers/validationConst");
 
 const commonValidationMessage = {
   firstNameRequired: "First name is required",

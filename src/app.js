@@ -8,6 +8,8 @@ var cors = require("cors");
 
 const errorHandler = require("@Middleware/error");
 const commonRouter = require("@Routes/commonRouter");
+const superAdminRouter = require("@Routes/superAdminRouter");
+const userRouter = require("@Routes/userRouter");
 
 const app = express();
 
@@ -16,6 +18,9 @@ app.use(express.static("public"));
 app.use(cors());
 
 app.use("/", commonRouter);
+app.use("/super-admin", superAdminRouter);
+app.use("/user", userRouter);
+
 app.use((req, res) => {
   res.status(404);
   res.sendFile(path.join(__dirname, "errorPage", "invalidEndpoint.html"));

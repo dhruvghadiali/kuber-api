@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 
-const { emailRegex, phoneRegex } = require("@MEHelpers/regex");
+const { emailRegex, phoneRegex } = require("@Helpers/regex");
 const {
   emailMaxChar,
   emailMinChar,
