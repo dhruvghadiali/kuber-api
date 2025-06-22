@@ -4,7 +4,7 @@ const {
   passwordMinChar,
   passwordMaxCharWithEncryption,
   passwordMaxCharWithoutEncryption,
-} = require("@MEHelpers/validationConst");
+} = require("@Helpers/validationConst");
 
 const userValidationMessage = {
   userDetailsRequired: "User details are required",
